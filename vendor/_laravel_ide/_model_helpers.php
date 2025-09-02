@@ -23,6 +23,10 @@ namespace App\Models {
      * @property int $model_id
      * @property int $maker_id
      * @property int $id
+     * @property-read \App\Models\CarFeatures $features
+     * @property-read \App\Models\CarImage $primaryImage
+     * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\CarImage> $images
+     * @property-read int|null $images_count
      * @method static \Illuminate\Database\Eloquent\Builder<Car>|Car whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Car>|Car whereMakerId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Car>|Car whereModelId($value)
@@ -663,19 +667,19 @@ namespace App\Models {
     }
 
     /**
-     * App\Models\CarImages
+     * App\Models\CarImage
      *
      * @property int $position
      * @property string $image_path
      * @property int $car_id
      * @property int $id
-     * @method static \Illuminate\Database\Eloquent\Builder<CarImages>|CarImages whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<CarImages>|CarImages whereCarId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<CarImages>|CarImages whereImagePath($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<CarImages>|CarImages wherePosition($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<CarImages>|CarImages newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder<CarImages>|CarImages newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder<CarImages>|CarImages query()
+     * @method static \Illuminate\Database\Eloquent\Builder<CarImage>|CarImage whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<CarImage>|CarImage whereCarId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<CarImage>|CarImage whereImagePath($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<CarImage>|CarImage wherePosition($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<CarImage>|CarImage newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<CarImage>|CarImage newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<CarImage>|CarImage query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -964,7 +968,7 @@ namespace App\Models {
      * @method static mixed macroCall($method, $parameters)
      * @mixin \Illuminate\Database\Query\Builder
      */
-    class CarImages extends \Illuminate\Database\Eloquent\Model
+    class CarImage extends \Illuminate\Database\Eloquent\Model
     {
         //
     }
