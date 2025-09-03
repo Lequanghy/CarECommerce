@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Car;
+use App\Models\CarType;
 use App\Models\FuelType;
 use Illuminate\Http\Request;
 
@@ -91,7 +92,9 @@ class HomeController extends Controller
 
         $car = Car::find(1);
         // dd($car->features, $car->primaryImage);
-        dd($car->images);
+        dd($car->carType);
+        $carType = CarType::find(1);
+        dd($carType);
 
         return view('home.index');
     }
