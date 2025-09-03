@@ -27,6 +27,7 @@ namespace App\Models {
      * @property-read \App\Models\CarImage $primaryImage
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\CarImage> $images
      * @property-read int|null $images_count
+     * @property-read \App\Models\CarType $carType
      * @method static \Illuminate\Database\Eloquent\Builder<Car>|Car whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Car>|Car whereMakerId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Car>|Car whereModelId($value)
@@ -978,6 +979,8 @@ namespace App\Models {
      *
      * @property string $name
      * @property int $id
+     * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Car> $cars
+     * @property-read int|null $cars_count
      * @method static \Illuminate\Database\Eloquent\Builder<CarType>|CarType whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<CarType>|CarType whereName($value)
      * @method static \Illuminate\Database\Eloquent\Builder<CarType>|CarType newModelQuery()
