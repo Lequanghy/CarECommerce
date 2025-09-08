@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\CarType;
 use App\Models\FuelType;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -90,12 +91,22 @@ class HomeController extends Controller
 
         // $car = Car::where('year', '<', '2020')->delete();
 
-        $car = Car::find(1);
-        // dd($car->features, $car->primaryImage);
-        dd($car->carType);
-        $carType = CarType::find(1);
-        dd($carType);
+        // $car = Car::find(1);
+        // // dd($car->features, $car->primaryImage);
+        // dd($car->carType);
+        // $carType = CarType::find(1);
+        // dd($carType);
 
+        // $carType = CarType::where('name', 'Hatchback')->first();
+        // $car = $carType->cars;
+        // // $cars = Car::whereBelongsTo($carType)->get();
+        // dump($car);
+
+        // $cars = Car::find(1);
+        // dd($cars->favouredUsers);
+
+        $user = User::find(1);
+        dd($user->FavouriteCars);
         return view('home.index');
     }
 }
