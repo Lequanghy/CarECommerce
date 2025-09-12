@@ -10,10 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('models', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('maker_id')->constrained('makers');
-            $table->string('name', 45);
+        Schema::table('models', function (Blueprint $table) {
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
         });
@@ -24,6 +21,9 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('models');
+        Schema::table('models', function (Blueprint $table) {
+            $table->dropTimestamps();
+            $table->dropColumn('deleted_at');
+        });
     }
 };
