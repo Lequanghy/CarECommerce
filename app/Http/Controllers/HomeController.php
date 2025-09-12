@@ -7,12 +7,19 @@ use App\Models\FuelType;
 use App\Models\Maker;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Model;
 
 class HomeController extends Controller
 {
     public function index()
     {
 
+        // User::factory()
+        //     ->has(Car::factory()->count(5), 'favouriteCars')
+        //     ->create();
+        // $model_id = Model::where('maker_id', 11)
+        //     ->inRandomOrder()->first();
+        // dd($model_id);
         return view('home.index');
     }
 }
