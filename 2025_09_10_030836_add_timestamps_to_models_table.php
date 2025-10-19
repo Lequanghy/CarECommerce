@@ -11,8 +11,8 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('models', function (Blueprint $table) {
-            $table->timestamps();
-            $table->timestamp('deleted_at')->nullable();
+            // $table->timestamps();
+            // $table->timestamp('deleted_at')->nullable();
         });
     }
 
@@ -22,8 +22,8 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('models', function (Blueprint $table) {
-            $table->dropTimestamps();
-            $table->dropColumn('deleted_at');
+            // $table->dropTimestamps();
+            // $table->dropColumn('deleted_at');
         });
     }
 };
