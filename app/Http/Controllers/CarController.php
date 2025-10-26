@@ -82,7 +82,7 @@ class CarController extends Controller
 
     public function watchlist()
     {
-        $cars = User::find(4)->favouriteCars();
+        $cars = User::find(5)->favouriteCars()->get();
         return view('car.watchlist', ['cars' => $cars]);
     }
 }
