@@ -13,13 +13,20 @@ Route::view('/about', 'about')->name('about');
 
 Route::get('/car/search', [CarController::class, 'search'])->name('car.search');
 
-Route::get('/car/watchlist', [CarController::class, 'watchlist'])->name('car.watchlist');
+Route::middleware('auth')->group(function () {
+    Route::get('/car/watchlist', [CarController::class, 'watchlist'])->name('car.watchlist');
+    Route::resource('car', CarController::class)->except(['show']);
+    Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
+});
 
-Route::resource('car', CarController::class);
+Route::resource('car', CarController::class)->only(['show']);
 
-Route::get('/signup', [SignupController::class, 'create'])->name('signup');
-
-Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::middleware('guest')->group(function () {
+    Route::get('/signup', [SignupController::class, 'create'])->name('signup');
+    Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
+    Route::get('/login', [LoginController::class, 'create'])->name('login');
+    Route::post('/login', [LoginController::class, 'store'])->name('login.store');
+});
 
 
 

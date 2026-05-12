@@ -28,6 +28,12 @@
 
 <body @if ($bodyClass)class="{{ $bodyClass }}"@endisset>
 
+    @if (session('success'))
+        <div class="container" style="padding-top: 1rem;">
+            <div class="success-message">{{ session('success') }}</div>
+        </div>
+    @endif
+
     {{ $slot }}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"

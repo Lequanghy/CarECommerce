@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Car Body -->
+  <path d="M 100 180 Q 90 170, 85 160 Q 80 150, 85 140 Q 90 130, 100 125 Q 110 120, 130 120 L 300 120 Q 320 120, 330 130 Q 340 140, 335 150 L 320 160 L 310 170 L 300 175 L 280 180 L 100 180 Z" fill="url(#carGradient)" stroke="#003366" stroke-width="2"/>
+  
+  <!-- Hood Scoop / Air Intake -->
+  <path d="M 130 125 Q 135 115, 145 115 Q 155 115, 160 125 Z" fill="#003366"/>
+  
+  <!-- Rear Wing -->
+  <path d="M 300 120 L 310 105 L 340 105 L 350 120 Z" fill="#003366" stroke="#001f3f" stroke-width="1"/>
+  
+  <!-- Windows -->
+  <path d="M 140 140 L 170 140 L 180 150 L 170 160 L 140 160 Z M 200 140 L 230 140 L 240 150 L 230 160 L 200 160 Z" fill="#cccccc" opacity="0.7"/>
+  
+  <!-- Wheels -->
+  <circle cx="150" cy="190" r="30" fill="#003366" stroke="#001f3f" stroke-width="3"/>
+  <circle cx="150" cy="190" r="20" fill="#aaaaaa"/>
+  <circle cx="150" cy="190" r="10" fill="#dddddd"/>
+  
+  <circle cx="280" cy="190" r="30" fill="#003366" stroke="#001f3f" stroke-width="3"/>
+  <circle cx="280" cy="190" r="20" fill="#aaaaaa"/>
+  <circle cx="280" cy="190" r="10" fill="#dddddd"/>
+  
+  <!-- Gradient for Car -->
+  <defs>
+    <linearGradient id="carGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00aaff"/>
+      <stop offset="50%" stop-color="#0077cc"/>
+      <stop offset="100%" stop-color="#004488"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Text: AUTOCART -->
+  <text x="200" y="80" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="url(#textGradient)" text-anchor="middle" letter-spacing="2">
+    AUTOCART
+  </text>
+  
+  <!-- Arrow -->
+  <path d="M 320 65 L 350 65 L 340 55 M 350 65 L 340 75" stroke="#00aaff" stroke-width="6" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Text Gradient -->
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00aaff"/>
+      <stop offset="100%" stop-color="#004488"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#00aaff"/>
+    </marker>
+  </defs>
+</svg>

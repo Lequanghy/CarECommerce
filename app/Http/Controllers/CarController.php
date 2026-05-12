@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -13,11 +12,11 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = User::find(5)
-            ->with(['primaryImage', 'maker', 'model'])
+        $cars = $this->currentUser()
             ->cars()
+            ->with(['primaryImage', 'maker', 'model'])
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(5);
 
         return view('car.index', ['cars' => $cars]);
     }
@@ -51,6 +50,8 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
+        abort_unless($car->user_id === $this->currentUser()->id, 403);
+
         return view('car.edit');
     }
 
@@ -76,19 +77,23 @@ class CarController extends Controller
             ->orderBy('published_at', 'desc')
             ->with(['primaryImage', 'city', 'maker', 'model', 'carType', 'fuelType']);
 
-        $carCount = $query->count();
+        $cars = $query->paginate(15);
 
-        $cars = $query->limit(30)->get();
-
-        return view('car.search', ['cars' => $cars, 'carCount' => $carCount]);
+        return view('car.search', ['cars' => $cars]);
     }
 
     public function watchlist()
     {
-        $cars = User::find(5)
-            ->with(['primaryImage', 'city', 'maker', 'model', 'carType', 'fuelType'])
+        $cars = $this->currentUser()
             ->favouriteCars()
-            ->get();
+            ->with(['primaryImage', 'city', 'maker', 'model', 'carType', 'fuelType'])
+            ->paginate(15);
+
         return view('car.watchlist', ['cars' => $cars]);
+    }
+
+    private function currentUser()
+    {
+        return auth()->user();
     }
 }
