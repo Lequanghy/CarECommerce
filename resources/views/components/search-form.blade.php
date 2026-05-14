@@ -2,6 +2,11 @@
     <!-- Find a car form -->
     <section class="find-a-car">
         <div class="container">
+            <div class="search-shell-intro">
+                <p class="section-kicker">Smart search</p>
+                <h2>Search by the details that matter</h2>
+                <p>Dial in price, region, fuel type, and model to surface the right listings faster.</p>
+            </div>
             <form action="{{ route('car.search') }}" method="GET" class="find-a-car-form card flex p-medium">
                 <div class="find-a-car-inputs">
                     <div>
@@ -328,7 +333,7 @@
                         </select>
                     </div>
                 </div>
-                <div>
+                <div class="search-form-actions">
                     <button type="button" class="btn btn-find-a-car-reset">
                         Reset
                     </button>

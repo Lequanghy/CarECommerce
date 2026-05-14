@@ -7,18 +7,21 @@
             <div class="hero-slide">
                 <div class="container">
                     <div class="slide-content">
+                        <p class="hero-kicker">Curated marketplace for modern car buyers</p>
                         <h1 class="hero-slider-title">
-                            Buy <strong>The Best Cars</strong> <br />
-                            in your region
+                            Find your next <strong>perfect drive</strong> with confidence
                         </h1>
                         <div class="hero-slider-content">
                             <p>
-                                Use powerful search tool to find your desired cars based on
-                                multiple search criteria: Maker, Model, Year, Price Range, Car
-                                Type, etc...
+                                Explore standout listings, compare details quickly, and narrow
+                                the right match with flexible filters for maker, model, year,
+                                budget, and body style.
                             </p>
 
-                            <button class="btn btn-hero-slider">Find the car</button>
+                            <div class="hero-actions">
+                                <a href="{{ route('car.search') }}" class="btn btn-hero-slider">Browse inventory</a>
+                                <a href="{{ route('about') }}" class="btn btn-hero-secondary">How it works</a>
+                            </div>
                         </div>
                     </div>
                     <div class="slide-image">
@@ -30,17 +33,20 @@
             <div class="hero-slide">
                 <div class="flex container">
                     <div class="slide-content">
+                        <p class="hero-kicker">List faster and stand out</p>
                         <h2 class="hero-slider-title">
-                            Do you want to <br />
-                            <strong>sell your car?</strong>
+                            Ready to <strong>sell your car</strong> without the usual friction?
                         </h2>
                         <div class="hero-slider-content">
                             <p>
-                                Submit your car in our user friendly interface, describe it,
-                                upload photos and the perfect buyer will find it...
+                                Create a polished listing, upload photos, and present your car
+                                with the details buyers actually care about.
                             </p>
 
-                            <button class="btn btn-hero-slider">Add Your Car</button>
+                            <div class="hero-actions">
+                                <a href="{{ route('car.create') }}" class="btn btn-hero-slider">Add your car</a>
+                                <a href="{{ route('car.search') }}" class="btn btn-hero-secondary">See examples</a>
+                            </div>
                         </div>
                     </div>
                     <div class="slide-image">
@@ -73,7 +79,13 @@
         <!-- New Cars -->
         <section>
             <div class="container">
-                <h2>Latest Added Cars</h2>
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Fresh arrivals</p>
+                        <h2>Latest Added Cars</h2>
+                    </div>
+                    <a href="{{ route('car.search') }}" class="section-link">View all listings</a>
+                </div>
                 <div class="car-items-listing">
                     @foreach ($cars as $car)
                         <x-car-item :$car />

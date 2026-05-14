@@ -5,7 +5,7 @@
         <img src="{{ $car->primaryImage->image_path }}" alt="" class="car-item-img rounded-t" />
     </a>
     <div class="p-medium">
-        <div class="flex items-center justify-between">
+        <div class="car-item-topline">
             <small class="m-0 text-muted">{{ $car->city->name }}</small>
             <button class="btn-heart text-primary">
 
@@ -25,7 +25,7 @@
         <h2 class="car-item-title">{{ $car->year }} - {{ $car->maker->name }} {{ $car->model->name }}</h2>
         <p class="car-item-price">${{ $car->price }}</p>
         <hr />
-        <p class="m-0">
+        <p class="m-0 car-item-meta">
             <span class="car-item-badge">{{ $car->carType->name }}</span>
             <span class="car-item-badge">{{ $car->fuelType->name }}</span>
         </p>

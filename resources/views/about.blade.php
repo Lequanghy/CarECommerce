@@ -1,1 +1,1 @@
-<h1>Hello, welcome to the about page of Family Tree </h1>
+<h1>How it works page in development </h1>

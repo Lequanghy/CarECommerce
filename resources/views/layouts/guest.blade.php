@@ -3,17 +3,19 @@
 <x-base-layout :$title :$bodyClass>
     <main>
         <div class="container-small page-login">
-            <div class="flex" style="gap: 5rem">
+            <div class="auth-shell flex">
                 <div class="auth-page-form">
-                    <div class="text-center">
+                    <div class="text-center auth-brand">
                         <a href="/">
-                            <img src="/img/logo.svg" alt="" />
+                            <img src="/img/logo.png" alt="" />
                         </a>
                     </div>
 
-                    @isset($slot)
-                        {{ $slot }}
-                    @endisset
+                    <div class="card auth-card">
+                        @isset($slot)
+                            {{ $slot }}
+                        @endisset
+                    </div>
 
                     <div class="login-text-dont-have-account">
                         @isset($haveAccount)

@@ -1,8 +1,13 @@
 <header class="navbar">
     <div class="container navbar-content">
         <a href="/" class="logo-wrapper">
-            <img src="/img/logo.svg" alt="Logo" />
+            <img src="/img/logo.png" alt="Logo" />
         </a>
+        <nav class="navbar-nav">
+            <a href="{{ route('Home') }}">Discover</a>
+            <a href="{{ route('car.search') }}">Browse Cars</a>
+            <a href="{{ route('about') }}">About</a>
+        </nav>
         <button class="btn btn-default btn-navbar-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" style="width: 24px">
@@ -56,8 +61,8 @@
                     Signup
                 </a>
                 <a href="{{ route('login') }}" class="btn btn-login flex items-center">
-                    <svg style="width: 18px; fill: currentColor; margin-right: 4px" viewBox="0 0 1024 1024"
-                        version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <svg style="width: 18px; fill: currentColor; margin-right: 4px" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M426.666667 736V597.333333H128v-170.666666h298.666667V288L650.666667 512 426.666667 736M341.333333 85.333333h384a85.333333 85.333333 0 0 1 85.333334 85.333334v682.666666a85.333333 85.333333 0 0 1-85.333334 85.333334H341.333333a85.333333 85.333333 0 0 1-85.333333-85.333334v-170.666666h85.333333v170.666666h384V170.666667H341.333333v170.666666H256V170.666667a85.333333 85.333333 0 0 1 85.333333-85.333334z"
                             fill="" />

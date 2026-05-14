@@ -91,10 +91,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const initMobileNavbar = () => {
     const btnToggle = document.querySelector(".btn-navbar-toggle");
+    if (!btnToggle) {
+      return;
+    }
 
     btnToggle.onclick = () => {
       document.body.classList.toggle("navbar-opened");
     };
+  };
+
+  const initFormResetButtons = () => {
+    const resetButtons = document.querySelectorAll(".btn-find-a-car-reset");
+
+    resetButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const form = button.closest("form");
+        if (!form) {
+          return;
+        }
+
+        form.reset();
+        form.querySelectorAll("select").forEach((select) => {
+          select.dispatchEvent(new Event("change"));
+        });
+      });
+    });
   };
 
   const imageCarousel = () => {
@@ -220,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initCascadingDropdown('#makerSelect', '#modelSelect');
   initCascadingDropdown('#stateSelect', '#citySelect');
   initSortingDropdown()
+  initFormResetButtons();
 
   ScrollReveal().reveal(".hero-slide.active .hero-slider-title", {
     delay: 200,
