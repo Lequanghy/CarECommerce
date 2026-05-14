@@ -1,6 +1,7 @@
 # Car E-commerce
 
 A web application for an e-commerce car sales platform built with Laravel.
+![Car E-commerce page](public/img/example.png)
 
 ## Features
 
