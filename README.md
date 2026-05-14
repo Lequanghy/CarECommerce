@@ -26,8 +26,7 @@ A web application for an e-commerce car sales platform built with Laravel.
 1. **Clone the repository**
 
     ```bash
-    git clone <repository-url>
-    cd "Laravel E-Commerce Tutorial"
+    git clone https://github.com/Lequanghy/CarECommerce
     ```
 
 2. **Install PHP dependencies**
