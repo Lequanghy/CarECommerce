@@ -1,3 +1,5 @@
+@props(['makers' => collect()])
+
 <div>
     <!-- Find a car form -->
     <section class="find-a-car">
@@ -12,12 +14,12 @@
                     <div>
                         <select id="makerSelect" name="maker_id">
                             <option value="">Maker</option>
-                            <option value="4">Chevrolet</option>
-                            <option value="2">Ford</option>
-                            <option value="3">Honda</option>
-                            <option value="6">Lexus</option>
-                            <option value="5">Nissan</option>
-                            <option value="1">Toyota</option>
+                            @foreach ($makers as $maker)
+                                <option value="{{ $maker->id }}"
+                                    {{ request('maker_id') == $maker->id ? 'selected' : '' }}>
+                                    {{ $maker->name }}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
                     <div>

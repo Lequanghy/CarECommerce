@@ -74,7 +74,7 @@
     </section>
     <!--/ Home Slider -->
     <main>
-        <x-search-form action='/search' method='GET' />
+        <x-search-form :makers="$makers" action='/search' method='GET' />
 
         <!-- New Cars -->
         <section>

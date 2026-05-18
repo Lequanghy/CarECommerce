@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Maker;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -124,7 +125,9 @@ class CarController extends Controller
 
         $cars = $query->paginate(15)->withQueryString();
 
-        return view('car.search', ['cars' => $cars]);
+        $makers = Maker::orderBy('name')->get();
+
+        return view('car.search', ['cars' => $cars, 'makers' => $makers]);
     }
 
     public function watchlist()
