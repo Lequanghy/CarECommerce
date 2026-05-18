@@ -21,10 +21,14 @@ class HomeController extends Controller
             ->get();
 
         $makers = Maker::orderBy('name')->get();
+        $models = Model::orderBy('name')->get();
+        $car_types = CarType::orderBy('name')->get();
 
         return view('home.index', [
             'cars' => $cars,
             'makers' => $makers,
+            'models' => $models,
+            'car_types' => $car_types,
         ]);
     }
 }
