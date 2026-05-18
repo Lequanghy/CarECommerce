@@ -1732,7 +1732,7 @@ select:focus {
 }
 
 .find-a-car {
-    margin-top: -3rem;
+    margin-top: 5%;
     position: relative;
     z-index: 2;
 }
@@ -2091,7 +2091,3 @@ select:focus {
         padding: 1.4rem;
     }
 }
-
-/* .container {
-    margin-top: 5%;
-} */

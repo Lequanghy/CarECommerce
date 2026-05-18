@@ -400,7 +400,8 @@
                                      </div>
                                  </div>
                                  <div class="search-form-actions flex">
-                                     <button type="button" class="btn btn-find-a-car-reset">
+                                     <button type="button" class="btn btn-find-a-car-reset"
+                                         onclick="this.closest('form').reset(); this.closest('form').submit();">
                                          Reset
                                      </button>
                                      <button class="btn btn-primary btn-find-a-car-submit">
